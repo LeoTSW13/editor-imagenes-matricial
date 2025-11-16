@@ -143,34 +143,24 @@ function matrizAImagen(matriz, rutaSalida) {
  */
 function obtenerCanal(matriz, canal) {
   // TODO: Implementar extracción de canal
+  
     if (!['r', 'g', 'b'].includes(canal)) {
-    throw new Error("Canal inválido. Debe ser 'r', 'g' o 'b'.");
-  }
-
-  // Validar que la matriz tenga forma correcta (opcional si ya lo haces en otro sitio)
-  validarMatriz(matriz);
-
-  // Crear matriz resultado copiando la estructura (preserva dimensiones)
-  const resultado = copiarMatriz(matriz);
-
-  for (let i = 0; i < matriz.length; i++) {
-    for (let j = 0; j < matriz[i].length; j++) {
-      const px = matriz[i][j];
-
-      // Tomar el valor del canal pedido, asegurarlo y redondear
-      const valor = Math.round(px[canal]);
-      const vLimitado = limitarValorColor(valor);
-
-      // Reemplazar el pixel en la matriz resultado por el gris correspondiente
+      throw new Error("Canal invalido. Debe ser 'r', 'g' o 'b'.");
+    }
+    const resultado = crearMatrizVacia(matriz);
+  for (let i = 0; i < resultado.length; i++) {
+    for (let j = 0; j < resultado[i].length; j++) {
+      const valor = matriz[i][j][canal];
       resultado[i][j] = {
-        r: vLimitado,
-        g: vLimitado,
-        b: vLimitado,
-        a: ('a' in px) ? limitarValorColor(px.a) : 255
+        r: valor,
+        g: valor,
+        b: valor,
+        a: matriz[i][j].a
       };
     }
   }
 
+  
   return resultado;
 }
 
