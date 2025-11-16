@@ -522,32 +522,7 @@ validarMatriz(matriz1);
 function aplicarSepia(matriz) {
   // TODO: Implementar filtro sepia
   
-  validarMatriz(matriz);
-
-  const resultado = copiarMatriz(matriz);
-
-  for (let i = 0; i < resultado.length; i++) {
-    for (let j = 0; j < resultado[i].length; j++) {
-      const px = matriz[i][j];
-
-      const r = px.r;
-      const g = px.g;
-      const b = px.b;
-
-      const rn = limitarValorColor(Math.floor(0.393 * r + 0.769 * g + 0.189 * b));
-      const gn = limitarValorColor(Math.floor(0.349 * r + 0.686 * g + 0.168 * b));
-      const bn = limitarValorColor(Math.floor(0.272 * r + 0.534 * g + 0.131 * b));
-
-      resultado[i][j] = {
-        r: rn,
-        g: gn,
-        b: bn,
-        a: px.a
-      };
-    }
-  }
-
-  return resultado;
+  return []; // REEMPLAZAR
 }
 
 /**
