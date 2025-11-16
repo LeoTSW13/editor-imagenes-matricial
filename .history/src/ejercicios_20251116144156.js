@@ -1,9 +1,9 @@
 // ============================================
 // EDITOR DE IMÁGENES CON ÁLGEBRA MATRICIAL
 // ============================================
-// Nombre del estudiante: Pablo Leonardo Noh Vidal
-// Fecha: 16/11/2025
-// Grupo: 1A
+// Nombre del estudiante: _________________
+// Fecha: _________________
+// Grupo: _________________
 
 const { PNG } = require('pngjs');
 const fs = require('fs');
@@ -58,26 +58,37 @@ const {
 function imagenAMatriz(rutaImagen) {
   // TODO: Implementar la conversión de PNG a matriz
   
-  const buffer = fs.readFileSync(rutaImagen);
-  const png = PNG.sync.read(buffer);
-  const matriz = [];
-
-  for(let y = 0; y < png.height; y++) {
-    const fila = [];
-    for (let x = 0; x < png.width; x++) {
-      const idx = (png.width * y + x) << 2;
-      const pixel = {
-        r: png.data[idx],
-        g: png.data[idx + 1],
-        b: png.data[idx + 2],
-        a: png.data[idx + 3]
-      };
-      fila.push(pixel);
-    }
-    matriz.push(fila);
-  }
+  // 1. Leer el archivo PNG
+  // const buffer = fs.readFileSync(rutaImagen);
+  // const png = PNG.sync.read(buffer);
   
-  return matriz;
+  // 2. Crear la matriz vacía
+  // const matriz = [];
+  
+  // 3. Recorrer cada fila (y) y cada columna (x)
+  // for (let y = 0; y < png.height; y++) {
+  //   const fila = [];
+  //   for (let x = 0; x < png.width; x++) {
+  //     // 4. Calcular el índice en el buffer
+  //     const idx = (png.width * y + x) << 2; // equivalente a * 4
+  //     
+  //     // 5. Extraer los valores RGBA
+  //     const pixel = {
+  //       r: png.data[idx],
+  //       g: png.data[idx + 1],
+  //       b: png.data[idx + 2],
+  //       a: png.data[idx + 3]
+  //     };
+  //     
+  //     fila.push(pixel);
+  //   }
+  //   matriz.push(fila);
+  // }
+  
+  // 6. Retornar la matriz
+  // return matriz;
+  
+  return []; // REEMPLAZAR CON TU CÓDIGO
 }
 
 /**
