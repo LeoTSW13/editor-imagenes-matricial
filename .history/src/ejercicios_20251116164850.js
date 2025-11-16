@@ -259,37 +259,25 @@ function ajustarBrillo(matriz, factor) {
 function invertirColores(matriz) {
   // TODO: Implementar inversión de colores
   
-  const resultado = copiarMatriz(matriz);
+const resultado = copiarMatriz(matriz);
 
-  for (let i = 0; i < resultado.length; i++) {
-    for (let j = 0; j < resultado[i].length; j++) {
-      const px = matriz[i][j];
-      resultado[i][j] = {
-        r: 255 - px.r,
-        g: 255 - px.g,
-        b: 255 - px.b,
-        a: px.a
+for (let i = 0; i < resultado.length; i++) {
+  for (let j = 0; j < resultado[i].length; j++) {
+    const px = matriz[i][j];
+    resultado[i][j] = {
+      r: 255 - px.r,
+      r: 255 - px.g,
+      b: 255 - px.b,
+      a: px.a
       };
     }
   }
+
 
   return resultado;
 }
 
 
-/**
- * Ejercicio 2.3: Convertir a escala de grises (9 puntos)
- * 
- * Convierte la imagen a escala de grises usando el promedio ponderado:
- * Gris = 0.299*R + 0.587*G + 0.114*B
- * 
- * Estos pesos reflejan la sensibilidad del ojo humano a cada color.
- * 
- * @param {Array<Array<Object>>} matriz - Matriz de píxeles
- * @returns {Array<Array<Object>>} - Matriz en escala de grises
- * 
- * @example
- * const grises = convertirEscalaGrises(matriz);
  */
 function convertirEscalaGrises(matriz) {
   // TODO: Implementar conversión a escala de grises
