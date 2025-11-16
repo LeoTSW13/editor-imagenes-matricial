@@ -347,7 +347,7 @@ validarMatriz(matriz);
   }
 
   return resultado;
-}
+
 /**
  * Ejercicio 3.2: Voltear vertical (10 puntos)
  * 

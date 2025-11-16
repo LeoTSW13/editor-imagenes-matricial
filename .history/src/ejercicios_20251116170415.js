@@ -347,7 +347,7 @@ validarMatriz(matriz);
   }
 
   return resultado;
-}
+
 /**
  * Ejercicio 3.2: Voltear vertical (10 puntos)
  * 
@@ -365,43 +365,11 @@ validarMatriz(matriz);
  */
 function voltearVertical(matriz) {
   // TODO: Implementar volteo vertical
-  // Validar entrada (lanza error si la matriz no tiene formato correcto)
-  validarMatriz(matriz);
-
-  // Caso vacío
-  if (!Array.isArray(matriz) || matriz.length === 0) return [];
-
-  const alto = matriz.length;
-  const ancho = matriz[0].length;
-
-  // Construir resultado sin mutar la original.
-  // Nos aseguramos de copiar cada pixel por valor para evitar aliasing.
-  const resultado = new Array(alto);
-
-  for (let i = 0; i < alto; i++) {
-    // fila índice desde abajo hacia arriba
-    const filaOrigen = matriz[alto - 1 - i];
-
-    // Comprobar que la fila tiene la longitud esperada (matriz rectangular)
-    if (!Array.isArray(filaOrigen) || filaOrigen.length !== ancho) {
-      throw new Error('Matriz no rectangular en voltearVertical');
-    }
-
-    // Copiar pixel por pixel (copia por valor)
-    const filaCopiada = filaOrigen.map(px => ({
-      r: limitarValorColor(px.r),
-      g: limitarValorColor(px.g),
-      b: limitarValorColor(px.b),
-      a: ('a' in px) ? limitarValorColor(px.a) : 255
-    }));
-
-    resultado[i] = filaCopiada;
-  }
-
-  return resultado;
+  
+validarMatriz(matriz);
+const resultado = copiarMatriz(matriz).reverse(); 
+return resultado;
 }
-
-
 
 /**
  * Ejercicio 3.3: Rotar 90 grados en sentido horario (10 puntos)
