@@ -1,6 +1,6 @@
 // ============================================
 // EDITOR DE IMÁGENES CON ÁLGEBRA MATRICIAL
-// ============================================
+// ============================================ 
 // Nombre del estudiante: Pablo Leonardo Noh Vidal
 // Fecha: 16/11/2025
 // Grupo: 1A
