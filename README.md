@@ -1,4 +1,4 @@
-# Editor de Imágenes con Álgebra Matricial 
+# Tarea #16 Editor de Imágenes con Álgebra Matricial 
 
 **Fundamentos de Álgebra - Unidad III: Álgebra Lineal Aplicada**  
 Tecnológico de Software
